@@ -24,3 +24,7 @@ challenges-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+# ignore inputs, except examples
+/inputs/*
+!/inputs/*_example
