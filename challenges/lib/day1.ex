@@ -22,8 +22,8 @@ defmodule Day1 do
     31
   """
   def solve_part2 {left, right} do
-    right = right |> Enum.reduce(%{}, fn n, acc -> Map.update(acc, n, 1, &(&1 + 1)) end)
-    Enum.reduce left, 0, fn n, acc -> acc + n * Map.get(right, n, 0) end
+    right = Enum.frequencies right
+    Enum.reduce left, 0, fn n, acc -> acc + n * (right[n] || 0) end
   end
 
   def solve_from_file(file_name, part) do
